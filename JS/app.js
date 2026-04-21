@@ -51,16 +51,28 @@ const updateHome = () => {
   productCategoryEl.textContent = categories.join(', ') || '-';
 };
 
+const normalizeImageUrl = (url) => {
+  if (!url) return '';
+  const driveIdMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/);
+  if (driveIdMatch) {
+    return `https://drive.google.com/uc?export=view&id=${driveIdMatch[1]}`;
+  }
+  // Handle Google Photos URLs
+  const photosMatch = url.match(/lh3\.googleusercontent\.com\/d\/([a-zA-Z0-9_-]+)/);
+  if (photosMatch) {
+    return `https://lh3.googleusercontent.com/d/${photosMatch[1]}`;
+  }
+  return url;
+};
+
 const createProductCard = (product) => {
   const container = document.createElement('article');
   container.className = 'product-card';
 
   const image = document.createElement('img');
-  image.src = product.Product_Image || '';
+  image.src = normalizeImageUrl(product.Product_Image || '');
   image.alt = product.Product_Name || 'Produk';
-  image.onerror = () => {
-    image.src = 'https://via.placeholder.com/120x90?text=Produk';
-  };
+  image.loading = 'lazy';
 
   const info = document.createElement('div');
   const title = document.createElement('h3');
