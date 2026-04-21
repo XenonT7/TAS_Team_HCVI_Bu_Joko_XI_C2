@@ -53,16 +53,12 @@ const updateHome = () => {
 
 const normalizeImageUrl = (url) => {
   if (!url) return '';
-  const driveIdMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/);
-  if (driveIdMatch) {
-    return `https://drive.google.com/uc?export=view&id=${driveIdMatch[1]}`;
-  }
   // Handle Google Photos URLs
   const photosMatch = url.match(/lh3\.googleusercontent\.com\/d\/([a-zA-Z0-9_-]+)/);
   if (photosMatch) {
     return `https://lh3.googleusercontent.com/d/${photosMatch[1]}`;
   }
-  return url;
+  return '';
 };
 
 const createProductCard = (product) => {
