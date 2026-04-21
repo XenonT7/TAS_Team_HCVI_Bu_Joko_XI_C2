@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kantin Bu Joko</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="subtitle">Kantin Bu Joko</p>
+        <h1 id="page-title">Beranda</h1>
+      </div>
+    </header>
+
+    <main class="app-content">
+      <section id="home-page" class="page active">
+        <div class="card summary-card">
+          <h2>Halo, Bu Joko</h2>
+          <p id="home-welcome">Selamat datang di aplikasi kiosk mobile.</p>
+        </div>
+        <div class="card stats-card">
+          <div>
+            <p>Total Produk</p>
+            <strong id="total-products">0</strong>
+          </div>
+          <div>
+            <p>Kategori</p>
+            <strong id="product-category">-</strong>
+          </div>
+        </div>
+        <div class="card section-card">
+          <h3>Info Mitra</h3>
+          <p><strong>Nama Mitra:</strong> <span id="mitra-name">-</span></p>
+          <p><strong>Pemilik:</strong> <span id="owner-name">-</span></p>
+          <p><strong>Email:</strong> <span id="owner-email">-</span></p>
+          <p><strong>Alamat:</strong> <span id="owner-address">-</span></p>
+        </div>
+      </section>
+
+      <section id="products-page" class="page">
+        <div class="toolbar">
+          <input id="product-search" type="search" placeholder="Cari produk..." />
+          <span id="product-count">0 produk</span>
+        </div>
+        <div id="product-list" class="grid"></div>
+      </section>
+
+      <section id="history-page" class="page">
+        <div class="card section-card">
+          <h3>Riwayat Pesanan</h3>
+          <p>Fitur riwayat sementara menampilkan data contoh aktivitas transaksi.</p>
+        </div>
+        <div class="history-list" id="history-list">
+          <article class="history-card">
+            <div>
+              <strong>23 Apr 2026</strong>
+              <span>Beli 2 x Beng Beng Drink</span>
+            </div>
+            <p>Rp 12.000,-</p>
+          </article>
+          <article class="history-card">
+            <div>
+              <strong>21 Apr 2026</strong>
+              <span>Beli 1 x Nasi Cup</span>
+            </div>
+            <p>Rp 10.000,-</p>
+          </article>
+          <article class="history-card">
+            <div>
+              <strong>19 Apr 2026</strong>
+              <span>Beli 3 x Mineral Water</span>
+            </div>
+            <p>Rp 12.000,-</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="profile-page" class="page">
+        <div class="card profile-card">
+          <div class="profile-avatar">JB</div>
+          <div>
+            <h2 id="profile-name">Kantin Bu Joko</h2>
+            <p id="profile-school">SMA Hang Tuah 2</p>
+          </div>
+        </div>
+        <div class="card section-card">
+          <h3>Detail Profil</h3>
+          <p><strong>Nama Pemilik:</strong> <span id="profile-owner">-</span></p>
+          <p><strong>Kategori:</strong> <span id="profile-category">-</span></p>
+          <p><strong>Email:</strong> <span id="profile-email">-</span></p>
+          <p><strong>Alamat:</strong> <span id="profile-address">-</span></p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-button active" data-target="home-page">
+        <span>🏠</span>
+        <small>Beranda</small>
+      </button>
+      <button class="nav-button" data-target="products-page">
+        <span>🛍️</span>
+        <small>Produk</small>
+      </button>
+      <button class="nav-button" data-target="history-page">
+        <span>🕒</span>
+        <small>Riwayat</small>
+      </button>
+      <button class="nav-button" data-target="profile-page">
+        <span>👤</span>
+        <small>Profil</small>
+      </button>
+    </nav>
+  </div>
+
+  <script src="JS/app.js"></script>
+</body>
+</html>
